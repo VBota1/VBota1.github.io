@@ -17,7 +17,7 @@ new (function() {
     // final argument. This should be called to indicate that the block can
     // stop waiting.
     ext.wait_random = function(callback) {
-        wait = Math.random();
+        const wait = Math.random();
         console.log('Waiting for ' + wait + ' seconds');
         window.setTimeout(function() {
             callback();
@@ -32,5 +32,6 @@ new (function() {
     };
 
     // Register the extension
+    // @ts-ignore
     ScratchExtensions.register('Random wait extension', descriptor, ext);
 })();
